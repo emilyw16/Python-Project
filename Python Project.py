@@ -78,7 +78,7 @@ print('Precision:', precision_score(y_test, y_pred, pos_label=1, average = 'weig
 print('Recall:', recall_score(y_test, y_pred, pos_label=1, average = 'weighted'))
 print('F1 score:', f1_score(y_test, y_pred, pos_label=1, average = 'weighted'))
 
-test_sentence = "young Female Hypertension Emergency"
+test_sentence = "young Female Arthritis Emergency"
 test_sentence = vectorize(test_sentence)
 result = clf.predict(np.array([test_sentence]))
 print(result)
