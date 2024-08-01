@@ -22,11 +22,9 @@ with open(input_file_path, 'r') as input_file, open(output_file_path, 'w', newli
     for chunk in reader:  
         chunk['Test Result'] = chunk['Age'].apply(convert_age) + " " + chunk['Gender'] + " " + chunk['Medical Condition'] + " " + chunk['Admission Type']
         output_chunk = chunk[['Test Result', 'Length of Stay']]
-        # Convert the DataFrame to a list of lists
         data_to_write = output_chunk.values.tolist()
-        # Write to the CSV file
         if first_chunk:
-            writer.writerow(output_chunk.columns)  # Write the header only for the first chunk
+            writer.writerow(output_chunk.columns)
             first_chunk = False
         writer.writerows(data_to_write)
 
@@ -78,7 +76,7 @@ print('Precision:', precision_score(y_test, y_pred, pos_label=1, average = 'weig
 print('Recall:', recall_score(y_test, y_pred, pos_label=1, average = 'weighted'))
 print('F1 score:', f1_score(y_test, y_pred, pos_label=1, average = 'weighted'))
 
-test_sentence = "young Female Arthritis Emergency"
+test_sentence = # test case
 test_sentence = vectorize(test_sentence)
 result = clf.predict(np.array([test_sentence]))
 print(result)
